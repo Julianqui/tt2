@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=GitKraken
+Comment=Deben cambiar la ruta que esta despues del && por la ruta donde esta alojada el gitkraken
+Exec=bash -c 'rm -rf .gitkraken/ && /usr/share/gitkraken/gitkraken'
+Terminal=false
+Type=Application
+Categories=Utility;Application;
+Icon=/usr/share/pixmaps/app.png
