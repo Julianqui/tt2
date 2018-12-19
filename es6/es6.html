@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>ES6</title>
+	</head>
+	<body>
+		<h1></h1>
+		<script>
+			let h1 = document.querySelector('h1');
+
+			const DNI = 192345690;
+			console.log(DNI);
+			const AUTO = {
+				marca: 'Fiat'
+			};
+
+			AUTO.color = 'Rojo';
+			AUTO.marca = 'Renault';
+			AUTO.marca = 'Peugeot';
+			AUTO.kilometraje = 15600;
+
+			console.log(AUTO);
+
+			for (var prop in AUTO) {
+				console.log(AUTO[prop]);
+			}
+
+			const otroAuto = ['Fiat', 'Verde', 2018];
+			otroAuto[0] = 'Chevrolet';
+			otroAuto.push('Otra cosa');
+			console.log(otroAuto);
+
+			function arrancar () {
+				return 'Rummm Runnmm';
+			}
+
+			h1.innerHTML = `Mi auto es de marca ${AUTO.marca} y es de color ${otroAuto[1]} - Y cuando enciende hace ${arrancar()}, el kilomentraje es ${AUTO.kilometraje + 345}`;
+
+			let enigma = ['l', 1, 'a', 2, 2, 5, 'p', 5, 7, 5, 3, 'e', 6, 'r', 7, 6, 5, 3, 2, 1, 's', 9, 9, 9, 6, 'e', 2, 'v', 5, 'e', 3, 'r', 2, 'a', 1, 6, 4, 1, 2, 'n', 2, 'c', 3, 5, 5, 5, 7, 'i', 4, 'a', 5, 2, 1, 3, 'e', 6, 's', 7, 'l', 4, 'a', 3, 'c', 2, 3, 1, 5, 3, 2, 'l', 3, 'a', 4, 'v', 5, 'e', 6];
+
+			let soloLetras = enigma
+				.filter(elem => typeof elem === 'string')
+				.reduce((acum, elem) => acum + elem);
+
+			let soloLetrasAgain = enigma.filter(function (elem) {
+				return typeof elem === 'string';
+			}).reduce(function (acum, elem) {
+				return `${acum} - ${elem}`;
+			}, 'HOLA MUNDO: ');
+
+			console.log(soloLetras);
+			console.log(soloLetrasAgain);
+
+			var IRON_MAN = {
+				name: 'Iron Man',
+				powers: ['Láser', 'Volar', 'Golpear'],
+				choosePower: power => IRON_MAN.powers[power]
+			};
+
+			console.log(IRON_MAN.choosePower(0));
+
+			let arrayOne = ['Ada', 'Grace'];
+			let arrayTwo = ['Tim', 'Vim'];
+			let arrayFinal = [...arrayOne, 'Juanita', ...arrayTwo];
+			console.log(arrayFinal);
+
+			let greatPeople = ['Ada', 'Grace', 'Tim', 'Vim', 'Brendan'];
+
+			let [, w1, , , w2] = greatPeople;
+			let otroArray = [w1, w2];
+			console.log(w1);
+			console.log(w2);
+			console.log(otroArray);
+			console.log(greatPeople);
+
+			let {powers, name} = IRON_MAN;
+			console.log(name);
+			console.log(powers);
+		</script>
+
+	</body>
+</html>
